@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://com" xmlns:intf="http://com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="celsiusToFahrenheit">
+    <complexType>
+     <sequence>
+      <element name="celcius" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="celsiusToFahrenheitResponse">
+    <complexType>
+     <sequence>
+      <element name="celsiusToFahrenheitReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="fahrenheitToCelsius">
+    <complexType>
+     <sequence>
+      <element name="fahrenheit" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="fahrenheitToCelsiusResponse">
+    <complexType>
+     <sequence>
+      <element name="fahrenheitToCelsiusReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="kilometreToMile">
+    <complexType>
+     <sequence>
+      <element name="kilometre" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="kilometreToMileResponse">
+    <complexType>
+     <sequence>
+      <element name="kilometreToMileReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="mileToKilometre">
+    <complexType>
+     <sequence>
+      <element name="mile" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="mileToKilometreResponse">
+    <complexType>
+     <sequence>
+      <element name="mileToKilometreReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="fahrenheitToCelsiusRequest">
+
+      <wsdl:part element="impl:fahrenheitToCelsius" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="fahrenheitToCelsiusResponse">
+
+      <wsdl:part element="impl:fahrenheitToCelsiusResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="mileToKilometreRequest">
+
+      <wsdl:part element="impl:mileToKilometre" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="mileToKilometreResponse">
+
+      <wsdl:part element="impl:mileToKilometreResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="kilometreToMileRequest">
+
+      <wsdl:part element="impl:kilometreToMile" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="celsiusToFahrenheitRequest">
+
+      <wsdl:part element="impl:celsiusToFahrenheit" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="celsiusToFahrenheitResponse">
+
+      <wsdl:part element="impl:celsiusToFahrenheitResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="kilometreToMileResponse">
+
+      <wsdl:part element="impl:kilometreToMileResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="Calculation">
+
+      <wsdl:operation name="celsiusToFahrenheit">
+
+         <wsdl:input message="impl:celsiusToFahrenheitRequest" name="celsiusToFahrenheitRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:celsiusToFahrenheitResponse" name="celsiusToFahrenheitResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="fahrenheitToCelsius">
+
+         <wsdl:input message="impl:fahrenheitToCelsiusRequest" name="fahrenheitToCelsiusRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:fahrenheitToCelsiusResponse" name="fahrenheitToCelsiusResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="kilometreToMile">
+
+         <wsdl:input message="impl:kilometreToMileRequest" name="kilometreToMileRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:kilometreToMileResponse" name="kilometreToMileResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="mileToKilometre">
+
+         <wsdl:input message="impl:mileToKilometreRequest" name="mileToKilometreRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:mileToKilometreResponse" name="mileToKilometreResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="CalculationSoapBinding" type="impl:Calculation">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="celsiusToFahrenheit">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="celsiusToFahrenheitRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="celsiusToFahrenheitResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="fahrenheitToCelsius">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="fahrenheitToCelsiusRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="fahrenheitToCelsiusResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="kilometreToMile">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="kilometreToMileRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="kilometreToMileResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="mileToKilometre">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="mileToKilometreRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="mileToKilometreResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="CalculationService">
+
+      <wsdl:port binding="impl:CalculationSoapBinding" name="Calculation">
+
+         <wsdlsoap:address location="http://localhost:9090/Assignment_02/services/Calculation"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
